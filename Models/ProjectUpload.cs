@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+<<<<<<< HEAD
 using System.ComponentModel.DataAnnotations.Schema;
+=======
+>>>>>>> 74b5af5cb63ce0e9691d4e2f5d07e652b86827e2
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -28,11 +31,15 @@ namespace TerminologyDemo.Models
       [Required(ErrorMessage="New url Required")]
       public string urlName { get; set; }   
 
+<<<<<<< HEAD
     public int UserId{ get ; set;}
       public  virtual UserAccount UserAccount { get; set;}
 
       [NotMapped]
       public IEnumerable<ProjectUpload> dropdownlistforProject { get; set; }
+=======
+    
+>>>>>>> 74b5af5cb63ce0e9691d4e2f5d07e652b86827e2
   }
 
 }

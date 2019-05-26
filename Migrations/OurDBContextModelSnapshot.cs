@@ -45,15 +45,21 @@ namespace TerminologyDemo.Migrations
 
                     b.Property<string>("ProjectTitle");
 
+<<<<<<< HEAD
                     b.Property<int>("UserId");
 
+=======
+>>>>>>> 74b5af5cb63ce0e9691d4e2f5d07e652b86827e2
                     b.Property<string>("urlName")
                         .IsRequired();
 
                     b.HasKey("PId");
 
+<<<<<<< HEAD
                     b.HasIndex("UserId");
 
+=======
+>>>>>>> 74b5af5cb63ce0e9691d4e2f5d07e652b86827e2
                     b.ToTable("ProjectUpload");
                 });
 
@@ -63,7 +69,12 @@ namespace TerminologyDemo.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+<<<<<<< HEAD
                     b.Property<string>("ConformPassword");
+=======
+                    b.Property<string>("ConformPassword")
+                        .IsRequired();
+>>>>>>> 74b5af5cb63ce0e9691d4e2f5d07e652b86827e2
 
                     b.Property<string>("EmailId")
                         .IsRequired();
@@ -86,6 +97,7 @@ namespace TerminologyDemo.Migrations
 
                     b.ToTable("UserAccount");
                 });
+<<<<<<< HEAD
 
             modelBuilder.Entity("TerminologyDemo.Models.ProjectUpload", b =>
                 {
@@ -94,6 +106,8 @@ namespace TerminologyDemo.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
+=======
+>>>>>>> 74b5af5cb63ce0e9691d4e2f5d07e652b86827e2
 #pragma warning restore 612, 618
         }
     }

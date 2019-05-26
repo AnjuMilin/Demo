@@ -1,14 +1,20 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 74b5af5cb63ce0e9691d4e2f5d07e652b86827e2
 @model IEnumerable<TerminologyDemo.Models.ProjectUpload>
 
 @{
     ViewData["Title"] = "Delete news";
+<<<<<<< HEAD
 
    //{
        // List<SelectListItem> dropdownlistproject = (List<SelectListItem>)@ViewBag.DropdownList;
         //List<SelectListItem> CategorySelectList = CategoryList.Select(x => new SelectListItem() { Text = x.CategoryName.Trim(), Value = x.CategoryID.Trim() });
    // }
 
+=======
+>>>>>>> 74b5af5cb63ce0e9691d4e2f5d07e652b86827e2
 }
 
 <h1>Delete</h1>
@@ -21,9 +27,13 @@
 
         
         
+<<<<<<< HEAD
     
 
  <form asp-action="DeleteUrl">
+=======
+    <form asp-action="DeleteUrl">
+>>>>>>> 74b5af5cb63ce0e9691d4e2f5d07e652b86827e2
        
      <dl class="row">
         <dt class = "col-sm-2">
@@ -32,6 +42,7 @@
                         new SelectList(
                         Model.Select(x => new { Value = x.PId, Text = x.NewsTitle}),
                          "Value",
+<<<<<<< HEAD
                           "Text")
          )
 
@@ -43,6 +54,15 @@
 
         <input type="submit" value="DeleteUrl" class="btn btn-danger" /> |
         <a asp-action="Welcome" onsubmit="message()">Back to List</a>
+=======
+                          "Text"
+    )
+) 
+<!-- <input id="ProjectId" type="text" /> -->
+        </dt></dl>
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="ProjectUpload" onsubmit="message()">Back to List</a>
+>>>>>>> 74b5af5cb63ce0e9691d4e2f5d07e652b86827e2
     </form>
 </div>
 </html>
