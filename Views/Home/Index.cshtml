@@ -1,0 +1,92 @@
+﻿
+@model IEnumerable<TerminologyDemo.Models.ProjectUpload>
+    @using Microsoft.AspNetCore.Http
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+    <body>
+     <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TerminologyDemo</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                       
+                        <li>
+                        
+                   
+                         <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Register">Register</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
+                        </li>
+                         
+                    
+
+                    </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+ 
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="text-center">
+
+
+        <h2>Latest News</h2>
+        @if (Model.Any())
+        {
+            <table class="table">
+                <tr>
+                    <th>Contributer</th>
+                    <th>Name of the Project</th>
+                    <th>News Category</th>
+                    <th>News Url</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Contributer</td>
+                        <td>@item.ProjectTitle</td>
+                        <td>@item.NewsTitle</td>
+                        <td><a href=@(item.urlName)>@item.urlName</a><td>
+                   
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <p> No news available here .</p>
+
+        }
+        </div>
+    </div>
+    </div> 
+
+ </body>
+
+
+
+
+
+   
+</div>
