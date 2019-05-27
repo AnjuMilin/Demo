@@ -15,11 +15,7 @@ namespace TerminologyDemo.Models
     
       [Required(ErrorMessage="Project Name  Required")]
       public string ProjectName { get; set; }
-<<<<<<< HEAD
-     
-     
-=======
->>>>>>> 74b5af5cb63ce0e9691d4e2f5d07e652b86827e2
+
 
      
         
