@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TerminologyDemo.Models;
 
 namespace TerminologyDemo.Migrations
 {
     [DbContext(typeof(OurDBContext))]
-    partial class OurDBContextModelSnapshot : ModelSnapshot
+    [Migration("20190527063459_sixth")]
+    partial class sixth
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,25 +32,6 @@ namespace TerminologyDemo.Migrations
                     b.HasKey("ProjectId");
 
                     b.ToTable("ProjectManagement");
-                });
-
-            modelBuilder.Entity("TerminologyDemo.Models.ProjectManagementUseraccount", b =>
-                {
-                    b.Property<int>("ProjectManagementUseraccountId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("ProjectId");
-
-                    b.Property<int>("UserId");
-
-                    b.HasKey("ProjectManagementUseraccountId");
-
-                    b.HasIndex("ProjectId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("ProjectManagementUseraccount");
                 });
 
             modelBuilder.Entity("TerminologyDemo.Models.ProjectUpload", b =>
@@ -120,19 +103,6 @@ namespace TerminologyDemo.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("UserAccount");
-                });
-
-            modelBuilder.Entity("TerminologyDemo.Models.ProjectManagementUseraccount", b =>
-                {
-                    b.HasOne("TerminologyDemo.Models.ProjectManagement", "ProjectManagement")
-                        .WithMany("ProjectManegementUseraccounts")
-                        .HasForeignKey("ProjectId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("TerminologyDemo.Models.UserAccount", "UserAccount")
-                        .WithMany("ProjectManegementUseraccounts")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("TerminologyDemo.Models.ProjectUpload", b =>

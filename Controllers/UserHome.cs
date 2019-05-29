@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -107,9 +108,17 @@ namespace TerminologyDemo.Controllers
         {
             return _context.UserAccount.Any(e => e.UserId == id);
         }
-
-     public IActionResult AddNewTerminology()
+    [HttpGet]
+     public IActionResult SingleTerminology()
      {
+          
+         return View();
+     }
+
+      [HttpPost]
+     public IActionResult SingleTerminology(ResultViewModel x)
+     {
+          
          return View();
      }
 

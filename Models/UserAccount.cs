@@ -41,8 +41,7 @@ namespace TerminologyDemo.Models
 
      public bool IsActive { get ; set ;}
       
-      
-
+      public  virtual ICollection<ProjectManagementUseraccount> ProjectManegementUseraccounts { get; set;}
     
   }
 

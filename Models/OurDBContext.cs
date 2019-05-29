@@ -22,10 +22,12 @@ namespace TerminologyDemo.Models
     }
 
 
-
     public DbSet <UserAccount> UserAccount { get; set; }
     public DbSet <TerminologyDemo.Models.ProjectManagement> ProjectManagement{ get ; set;}
+
+    public DbSet <TerminologyAdd> TerminologyAdd { get; set;}
     public DbSet < ProjectUpload > ProjectUpload { get ; set;}
-   
+
+    public DbSet < ProjectManagementUseraccount > ProjectManagementUseraccount { get ; set;}
     }
 }

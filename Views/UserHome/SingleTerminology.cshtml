@@ -1,0 +1,73 @@
+@model TerminologyDemo.Models.ResultViewModel
+@{
+    ViewData["Title"] = "Add new terminology and its descripton here";
+}
+
+<div class="row">
+<form asp-action="SingleTerminology">
+
+ <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+ <div class="form-group">
+ 
+ <label asp-for="@Model.SingleTerminology[0].TerminologyName"></label>
+ <input asp-for="@Model.SingleTerminology[0].TerminologyName"/>
+ </div>
+<div class="form-group">
+ 
+ <label asp-for="@Model.SingleTerminology[0].TerminologyDesc"></label>
+ <input asp-for="@Model.SingleTerminology[0].TerminologyDesc"/>
+ 
+ </div>
+
+ <div class="form-group">
+     <input id="Addbutton" type="button" value="AddNew"/>
+ </div>
+<div id="Textboxcontainer">
+
+</div>
+
+
+<div class="form-group">
+    <input type="submit" value="Create" class="btn btn_default"/>
+</div>
+</form>
+</div>
+
+            <a asp-action="Welcome">Back-To-List</a>
+    
+   
+
+@section scripts
+{
+    <script type="text/javascript">
+
+    $(document).ready(function ()
+
+    {
+        
+    });
+    var i=1;
+        $("#Addbutton").click(function (){
+            var div =$("<div/>");
+            var value = "";
+            var TerminologyNameBox=$("<input />").attr("Type","textbox").attr("name",'@Model.SingleTerminology[0].TerminologyName');
+            var TerminologyDescBox=$("<input />").attr("Type","textbox").attr("name",'@Model.SingleTerminology[0].TerminologyDesc');
+             TerminologyNameBox.val(value);
+             TerminologyDescBox.val(value);
+             div.append(TerminologyNameBox);
+             div.append(TerminologyDescBox);
+             var button = $("<input />").attr("Type","button").attr("value","Remove");
+             button.attr("onclick","RemoveTextBox(this)");
+             div.append(button);
+             $("#Textboxcontainer").append(div);
+        });
+    function RemoveTextBox(button)
+    {
+        $(button).Parent().Remove();
+    }
+
+     </script>
+        
+}     
+    

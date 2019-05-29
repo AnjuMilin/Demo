@@ -42,7 +42,7 @@ namespace TerminologyDemo.Controllers
                 _context.SaveChanges();
                  ModelState.Clear();
                  ViewBag.Message=user.firstName+" "+user.LastName+" Is successfully registered";
-                
+                return View(_context.ProjectManagement.ToList() );
             
             }
             return View();
