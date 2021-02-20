@@ -7,22 +7,18 @@ using System.Threading.Tasks;
 
 namespace TerminologyDemo.Models
 {
-  public class ProjectManagementModel
+  public class ProjectManagement
   {
       [Key]
 
       public int ProjectId { get; set; }
-      
+    
       [Required(ErrorMessage="Project Name  Required")]
       public string ProjectName { get; set; }
-      
-      
+      public  virtual ICollection<ProjectManagementUseraccount> ProjectManegementUseraccounts { get; set;}
 
-
-      
-      
-
-    
+     
+        
   }
 
 }

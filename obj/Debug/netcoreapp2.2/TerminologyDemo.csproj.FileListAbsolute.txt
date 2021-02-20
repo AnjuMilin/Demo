@@ -30,7 +30,16 @@ C:\Users\anju.mathew\TerminologyDemo\obj\Debug\netcoreapp2.2\Razor\Views\Home\In
 C:\Users\anju.mathew\TerminologyDemo\obj\Debug\netcoreapp2.2\Razor\Views\Home\Login.g.cshtml.cs
 C:\Users\anju.mathew\TerminologyDemo\obj\Debug\netcoreapp2.2\Razor\Views\Home\Register.g.cshtml.cs
 C:\Users\anju.mathew\TerminologyDemo\obj\Debug\netcoreapp2.2\Razor\Views\Home\ResetPassword.g.cshtml.cs
-C:\Users\anju.mathew\TerminologyDemo\obj\Debug\netcoreapp2.2\Razor\Views\Home\Welcome.g.cshtml.cs
 C:\Users\anju.mathew\TerminologyDemo\obj\Debug\netcoreapp2.2\Razor\Views\Home\AdminHome.g.cshtml.cs
-C:\Users\anju.mathew\TerminologyDemo\obj\Debug\netcoreapp2.2\Razor\Views\ProjectManagementView\ProjectAddView.g.cshtml.cs
-C:\Users\anju.mathew\TerminologyDemo\obj\Debug\netcoreapp2.2\Razor\Views\ProjectManagementView\ProjectDeleteView.g.cshtml.cs
+C:\Users\anju.mathew\TerminologyDemo\obj\Debug\netcoreapp2.2\Razor\Views\ProjectManagement\ProjectManagementHome.g.cshtml.cs
+C:\Users\anju.mathew\TerminologyDemo\obj\Debug\netcoreapp2.2\Razor\Views\ProjectManagement\ProjectAdd.g.cshtml.cs
+C:\Users\anju.mathew\TerminologyDemo\obj\Debug\netcoreapp2.2\Razor\Views\ProjectManagement\ProjectView.g.cshtml.cs
+C:\Users\anju.mathew\TerminologyDemo\obj\Debug\netcoreapp2.2\Razor\Views\ProjectManagement\ProjectDelete.g.cshtml.cs
+C:\Users\anju.mathew\TerminologyDemo\obj\Debug\netcoreapp2.2\Razor\Views\UserHome\Addnewsurl.g.cshtml.cs
+C:\Users\anju.mathew\TerminologyDemo\obj\Debug\netcoreapp2.2\Razor\Views\UserHome\Welcome.g.cshtml.cs
+C:\Users\anju.mathew\TerminologyDemo\obj\Debug\netcoreapp2.2\Razor\Views\UserHome\DeleteUrl.g.cshtml.cs
+<<<<<<< HEAD
+C:\Users\anju.mathew\TerminologyDemo\obj\Debug\netcoreapp2.2\Razor\Views\UserHome\EditProfile.g.cshtml.cs
+=======
+>>>>>>> 74b5af5cb63ce0e9691d4e2f5d07e652b86827e2
+C:\Users\anju.mathew\TerminologyDemo\obj\Debug\netcoreapp2.2\Razor\Views\UserHome\SingleTerminology.g.cshtml.cs

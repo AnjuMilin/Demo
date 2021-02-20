@@ -18,6 +18,79 @@ namespace TerminologyDemo.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("TerminologyDemo.Models.ProjectManagement", b =>
+                {
+                    b.Property<int>("ProjectId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ProjectName")
+                        .IsRequired();
+
+                    b.HasKey("ProjectId");
+
+                    b.ToTable("ProjectManagement");
+                });
+
+            modelBuilder.Entity("TerminologyDemo.Models.ProjectManagementUseraccount", b =>
+                {
+                    b.Property<int>("ProjectManagementUseraccountId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ProjectId");
+
+                    b.Property<int>("UserId");
+
+                    b.HasKey("ProjectManagementUseraccountId");
+
+                    b.HasIndex("ProjectId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ProjectManagementUseraccount");
+                });
+
+            modelBuilder.Entity("TerminologyDemo.Models.ProjectUpload", b =>
+                {
+                    b.Property<int>("PId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Contributer")
+                        .IsRequired();
+
+                    b.Property<string>("NewsTitle");
+
+                    b.Property<string>("ProjectTitle");
+
+                    b.Property<int>("UserId");
+
+                    b.Property<string>("urlName")
+                        .IsRequired();
+
+                    b.HasKey("PId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ProjectUpload");
+                });
+
+            modelBuilder.Entity("TerminologyDemo.Models.TerminologyAdd", b =>
+                {
+                    b.Property<int>("TerminologyId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("TerminologyDesc");
+
+                    b.Property<string>("TerminologyName");
+
+                    b.HasKey("TerminologyId");
+
+                    b.ToTable("TerminologyAdd");
+                });
+
             modelBuilder.Entity("TerminologyDemo.Models.UserAccount", b =>
                 {
                     b.Property<int>("UserId")
@@ -29,6 +102,8 @@ namespace TerminologyDemo.Migrations
 
                     b.Property<string>("EmailId")
                         .IsRequired();
+
+                    b.Property<bool>("IsActive");
 
                     b.Property<string>("LastName")
                         .IsRequired();
@@ -45,6 +120,27 @@ namespace TerminologyDemo.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("UserAccount");
+                });
+
+            modelBuilder.Entity("TerminologyDemo.Models.ProjectManagementUseraccount", b =>
+                {
+                    b.HasOne("TerminologyDemo.Models.ProjectManagement", "ProjectManagement")
+                        .WithMany("ProjectManegementUseraccounts")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("TerminologyDemo.Models.UserAccount", "UserAccount")
+                        .WithMany("ProjectManegementUseraccounts")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("TerminologyDemo.Models.ProjectUpload", b =>
+                {
+                    b.HasOne("TerminologyDemo.Models.UserAccount", "UserAccount")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

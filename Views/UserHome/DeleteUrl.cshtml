@@ -1,0 +1,65 @@
+
+
+
+@model IEnumerable<TerminologyDemo.Models.ProjectUpload>
+
+@{
+    ViewData["Title"] = "Delete news";
+
+   //{
+       // List<SelectListItem> dropdownlistproject = (List<SelectListItem>)@ViewBag.DropdownList;
+        //List<SelectListItem> CategorySelectList = CategoryList.Select(x => new SelectListItem() { Text = x.CategoryName.Trim(), Value = x.CategoryID.Trim() });
+   // }
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    
+        
+
+        
+
+    
+
+ <form asp-action="DeleteUrl">
+
+    <form asp-action="DeleteUrl">
+
+       
+     <dl class="row">
+        <dt class = "col-sm-2">
+         @Html.DropDownList(
+                        "PId", 
+                        new SelectList(
+                        Model.Select(x => new { Value = x.PId, Text = x.NewsTitle}),
+                         "Value",
+                          "Text")
+         )
+
+
+
+<!-- <input id="ProjectId" type="text" /> -->
+        </dt></dl>
+
+
+        <input type="submit" value="DeleteUrl" class="btn btn-danger" /> |
+        <a asp-action="Welcome" onsubmit="message()">Back to List</a>
+                          "Text"
+    
+)
+)
+<!-- <input id="ProjectId" type="text" /> -->
+        </dt></dl>
+    </form>
+ </form>
+</div>
+</html>
+<script>
+     function message()
+     {
+         alert("successfully deleted news");
+     }
+</script>
